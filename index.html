@@ -34,15 +34,14 @@ window.onload = function() {
 <body>
 <header>
     <h1>Meu Portfólio</h1>
-    <nav>
-        <ul>
-            <!-- Links que mostram as seções na mesma aba -->
-            <li><a href="#" onclick="mostrarSeção('sobre')">Sobre Mim</a></li>
-            <li><a href="#" onclick="mostrarSeção('formacao')">Formação & Idiomas</a></li>
-            <li><a href="#" onclick="mostrarSeção('portfolio')">Portfólio</a></li>
-            <li><a href="#" onclick="mostrarSeção('contato')">Contato</a></li>
-        </ul>
-    </nav>
+   <nav>
+    <ul>
+        <li><a href="#" onclick="mostrarSeção('sobre'); return false;" class="nav-link">Sobre Mim</a></li>
+        <li><a href="#" onclick="mostrarSeção('formacao'); return false;" class="nav-link">Formação</a></li>
+        <li><a href="#" onclick="mostrarSeção('portfolio'); return false;" class="nav-link">Portfólio</a></li>
+        <li><a href="#" onclick="mostrarSeção('contato'); return false;" class="nav-link">Contato</a></li>
+    </ul>
+</nav>
 </header>
 
 <!-- Seções, com "Sobre Mim" exibida por padrão -->
