@@ -61,20 +61,21 @@ nav ul li {
 nav ul li a {
     color: var(--cor-branco);
     text-decoration: none;
-    font-weight: 600;
     padding: 0.5rem 1rem;
     border-radius: 4px;
-    transition: var(--transicao);
-    display: flex;
+    transition: all 0.3s ease;
+    display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    background-color: transparent; /* Fundo transparente por padrão */
 }
 
-nav ul li a:hover, nav ul li a.active {
-    background-color: rgba(255, 255, 255, 0.2);
+/* NAVEGAÇÃO - HOVER */
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
     transform: translateY(-2px);
 }
-
 /* Seções Modernas */
 section {
     padding: 2rem;
@@ -249,12 +250,6 @@ section {
     animation: fadeIn 0.6s ease-out;
 }
 
-/* Estilo para links ativos */
-nav ul li a.active {
-    background-color: var(--cor-secundaria);
-    color: white;
-    border-radius: 4px;
-}
 
 /* Remove estilos de botão se existirem */
 button[onclick*="mostrarSeção"] {
@@ -267,18 +262,22 @@ nav ul li:first-child a.active {
     color: inherit;
 }
 
-/* Estilo somente quando realmente ativo */
+/* NAVEGAÇÃO - ATIVO (selecionado) */
 nav ul li a.active {
-    background-color: var(--cor-secundaria);
+    background-color: var(--cor-secundaria) !important;
     color: white !important;
-    transform: scale(1.05);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
 }
-
 /* Estado normal dos links */
 nav ul li a {
     transition: all 0.3s ease;
     color: var(--cor-branco);
     padding: 8px 12px;
     border-radius: 4px;
+}
+
+/* REMOVE SOMBRA DO TEXTO */
+nav ul li a {
+    text-shadow: none !important;
 }
