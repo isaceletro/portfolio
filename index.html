@@ -34,11 +34,16 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 // Mostrar "Sobre Mim" por padrão
+// Atualize a função window.onload para:
 window.onload = function() {
-    mostrarSeção('sobre');
+    const urlParams = new URLSearchParams(window.location.search);
+    const secao = urlParams.get('secao');
     
-    // Adiciona classe 'active' ao link atual
-    document.querySelector('nav a').classList.add('active');
+    if (secao && ['sobre', 'formacao', 'portfolio', 'contato'].includes(secao)) {
+        mostrarSeção(secao);
+    } else {
+        mostrarSeção('sobre');
+    }
 };
 </script>
 </head>
