@@ -8,20 +8,31 @@
    <!-- Script para controlar a exibição das seções -->
    <script>
    function mostrarSeção(seçãoId) {
-    // Esconder todas as seções
-    document.querySelectorAll('section').forEach(seção => {
-        seção.style.display = 'none';
+    // Reset geral
+    document.querySelectorAll('section').forEach(s => s.style.display = 'none');
+    document.querySelectorAll('nav a').forEach(a => {
+        a.classList.remove('active');
+        a.style.boxShadow = 'none'; // Remove sombras residuais
     });
     
-    // Mostrar a seção selecionada
-    if(seçãoId) {
-        document.getElementById(seçãoId).style.display = 'block';
+    // Ativação da seção atual
+    if (seçãoId) {
+        const seção = document.getElementById(seçãoId);
+        const link = document.querySelector(`a[onclick*="${seçãoId}"]`);
+        
+        if (seção && link) {
+            seção.style.display = 'block';
+            link.classList.add('active');
+            
+            // Adiciona delay para evitar flickering
+            setTimeout(() => {
+                link.style.transition = 'all 0.3s ease';
+            }, 50);
+        }
     }
     
-    // Rolagem suave para o topo
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
 // Mostrar "Sobre Mim" por padrão
 window.onload = function() {
     mostrarSeção('sobre');
