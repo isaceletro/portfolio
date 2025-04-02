@@ -260,3 +260,25 @@ nav ul li a.active {
 button[onclick*="mostrarSeção"] {
     display: none !important;
 }
+
+/* Remove seleção automática do primeiro item */
+nav ul li:first-child a.active {
+    background-color: transparent;
+    color: inherit;
+}
+
+/* Estilo somente quando realmente ativo */
+nav ul li a.active {
+    background-color: var(--cor-secundaria);
+    color: white !important;
+    transform: scale(1.05);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Estado normal dos links */
+nav ul li a {
+    transition: all 0.3s ease;
+    color: var(--cor-branco);
+    padding: 8px 12px;
+    border-radius: 4px;
+}
