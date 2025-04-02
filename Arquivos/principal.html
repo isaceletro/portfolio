@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Pessoal</title>
+    <link rel="stylesheet" href="estilos.CSS">
+   <!-- Script para controlar a exibição das seções -->
+   <script>
+    function mostrarSeção(seçãoId) {
+        // Esconder todas as seções
+        const seções = document.querySelectorAll('section');
+        seções.forEach(seção => seção.style.display = 'none');
+        
+        // Mostrar a seção selecionada
+        const seção = document.getElementById(seçãoId);
+        seção.style.display = 'block';
+    }
+
+    // Mostrar "Sobre Mim" por padrão ao carregar a página
+    window.onload = function() {
+        mostrarSeção('sobre');
+    };
+</script>
+</head>
+<body>
+<header>
+    <h1>Meu Portfólio</h1>
+    <nav>
+        <ul>
+            <!-- Links que mostram as seções na mesma aba -->
+            <li><a href="#" onclick="mostrarSeção('sobre')">Sobre Mim</a></li>
+            <li><a href="#" onclick="mostrarSeção('formacao')">Formação & Idiomas</a></li>
+            <li><a href="#" onclick="mostrarSeção('portfolio')">Portfólio</a></li>
+            <li><a href="#" onclick="mostrarSeção('contato')">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Seções, com "Sobre Mim" exibida por padrão -->
+<section id="sobre">
+    <h2>Sobre Mim</h2>
+    <p>Olá! Meu nome é Isac Santos. Sou um Técnico em Automação industrial com mais de 10 anos de experiencia e desenvolvedor web apaixonado por criar soluções inovadoras. Nos meus momentos livres gosto de jogar Xadrez, assistir series e filmes.</p>
+    <button onclick="mostrarSeção('')">Voltar</button>
+</section>
+
+<section id="formacao" style="display: none;">
+    <h2>Formação & Idiomas</h2>
+    <h3>Educação</h3>
+    <ul>
+        <li>Técnico em Eletromecânica - ETESC - Escola Técnica Estadual Santa Cruz</li>
+        <li>Superior em Análise e Desenvolvimento de Sistemas - UNINTER - Concluinte</li>
+        
+    </ul>
+
+    
+    <h3>Idiomas</h3>
+    <ul>
+        <li>Português - Nativo</li>
+        <li>Inglês - Fluente</li>
+        
+    </ul>
+    <button onclick="mostrarSeção('')">Voltar</button>
+</section>
+
+<section id="portfolio" style="display: none;">
+    <h2>Portfólio</h2>
+    <div class="projeto">
+        <h3>Implementacao de Chave Criptografica</h3>
+        <p>Implementado o codigo que criptografa as oito primeiras letras do nome por criptografia simetrica pelo algoritmo elementar XOR. <a href="Arquivos/Pratica Matematica Computacional.pdf" target="_blank">PDF</a></p>
+    </div>
+    <div class="projeto">
+        <h3>Banco de Dados - Livraria </h3>
+        <p>Implementado o banco de dados de uma livraria, seguindo o modelo relacional fornecido e respeitando as condições estabelecidas <a href="Arquivos/Trabalho - Relatorio Banco de Dados.pdf"target="_blank">PDF</a></p>
+    </div>
+    <button onclick="mostrarSeção('')">Voltar</button>
+</section>
+
+<section id="contato" style="display: none;">
+    <h2>Contato</h2>
+    <form action="#" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+    <button onclick="mostrarSeção('')">Voltar</button>
+</section>
+
+<footer>
+    <p>&copy; 2024 Isac Santos. Todos os direitos reservados.</p>
+</footer>
+</body>
+</html>
