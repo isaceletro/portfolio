@@ -7,20 +7,28 @@
     <link rel="stylesheet" href="estilos.CSS">
    <!-- Script para controlar a exibição das seções -->
    <script>
-    function mostrarSeção(seçãoId) {
-        // Esconder todas as seções
-        const seções = document.querySelectorAll('section');
-        seções.forEach(seção => seção.style.display = 'none');
-        
-        // Mostrar a seção selecionada
-        const seção = document.getElementById(seçãoId);
-        seção.style.display = 'block';
+   function mostrarSeção(seçãoId) {
+    // Esconder todas as seções
+    document.querySelectorAll('section').forEach(seção => {
+        seção.style.display = 'none';
+    });
+    
+    // Mostrar a seção selecionada
+    if(seçãoId) {
+        document.getElementById(seçãoId).style.display = 'block';
     }
+    
+    // Rolagem suave para o topo
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
-    // Mostrar "Sobre Mim" por padrão ao carregar a página
-    window.onload = function() {
-        mostrarSeção('sobre');
-    };
+// Mostrar "Sobre Mim" por padrão
+window.onload = function() {
+    mostrarSeção('sobre');
+    
+    // Adiciona classe 'active' ao link atual
+    document.querySelector('nav a').classList.add('active');
+};
 </script>
 </head>
 <body>
