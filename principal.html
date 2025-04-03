@@ -94,7 +94,12 @@
 </section>
 
 <footer>
-    <p>&copy; 2025 Isac Santos. Todos os direitos reservados.</p>
+    <p>&copy; <span id="current-year">2025</span> Isac Santos. Todos os direitos reservados.</p>
 </footer>
+
+<script>
+    // Atualiza o ano automaticamente
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
