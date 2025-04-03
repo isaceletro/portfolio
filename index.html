@@ -132,7 +132,10 @@ window.onload = function() {
 </section>
 
 <footer>
-    <p>&copy; 2024 Isac Santos. Todos os direitos reservados.</p>
+    <p>&copy; <span id="ano-atual">2025</span> Isac Santos. Todos os direitos reservados.</p>
 </footer>
+<script>
+    document.getElementById('ano-atual').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
